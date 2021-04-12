@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const fetchApi = ({ queryImg = "", currentPage = 1, perPage = 12 }) => {
+export const fetchApi = ({ queryImg = "", currentPage = 1, perPage = 12 }) => {
   return axios
     .get(
       `https://pixabay.com/api/?key=20758880-26a96877c6629f333f17d88c3&q=${queryImg}&page=${currentPage}
@@ -9,4 +9,8 @@ const fetchApi = ({ queryImg = "", currentPage = 1, perPage = 12 }) => {
     .then((res) => res.data.hits);
 };
 
-export default { fetchApi };
+// const test = { fetchApi };
+
+// export const test;
+
+// export default { fetchApi };

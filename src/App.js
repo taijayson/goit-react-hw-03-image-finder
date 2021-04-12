@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import pixabayApi from "./utils/pixabayApi";
+import { fetchApi } from "./utils/pixabayApi";
+// import pixabayApi from "./utils/pixabayApi";
 
 import Loading from "./components/Loader/Loader";
 import Searchbar from "./components/Searchbar/Searchbar";
@@ -33,8 +34,8 @@ class App extends Component {
     const { currentPage, queryImg } = this.state;
     const options = { currentPage, queryImg };
     this.setState({ isLoading: true });
-    pixabayApi
-      .fetchApi(options)
+    //pixabayApi.
+    fetchApi(options)
       .then((hits) => {
         this.setState((prevState) => ({
           hits: [...prevState.hits, ...hits],
