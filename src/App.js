@@ -45,10 +45,12 @@ class App extends Component {
       .catch((err) => this.setState({ err }))
       .finally(() => {
         this.setState({ isLoading: false });
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: "smooth",
-        });
+        if (this.state.hits.length > 12) {
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+          });
+        }
       });
   };
 
