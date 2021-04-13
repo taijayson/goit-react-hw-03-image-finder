@@ -23,7 +23,7 @@ class App extends Component {
 
   onChangeValue = (search) => {
     this.setState({
-      hits: [],
+      hits: this.state.hits,
       queryImg: search,
       currentPage: 1,
       error: null,
